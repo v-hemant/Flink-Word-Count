@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'org.apache.flink'
+version = '1.0-SNAPSHOT'
+
+description = """Flink Quickstart Job"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+
+
+repositories {
+        
+     maven { url "https://repository.apache.org/content/repositories/snapshots/" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.apache.flink', name: 'flink-java', version:'0.10.0'
+    compile group: 'org.apache.flink', name: 'flink-streaming-java', version:'0.10.0'
+    compile group: 'org.apache.flink', name: 'flink-clients', version:'0.10.0'
+}
