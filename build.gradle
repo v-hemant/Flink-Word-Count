@@ -21,3 +21,13 @@ dependencies {
     compile group: 'org.apache.flink', name: 'flink-streaming-java', version:'0.10.0'
     compile group: 'org.apache.flink', name: 'flink-clients', version:'0.10.0'
 }
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',  
+        	'Implementation-Version': version,
+        	'Main-Class': 'com.dataartisans.ReadFromKafka'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
