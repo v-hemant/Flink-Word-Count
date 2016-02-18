@@ -20,6 +20,9 @@ dependencies {
     compile group: 'org.apache.flink', name: 'flink-java', version:'0.10.0'
     compile group: 'org.apache.flink', name: 'flink-streaming-java', version:'0.10.0'
     compile group: 'org.apache.flink', name: 'flink-clients', version:'0.10.0'
+    compile group: 'org.apache.flink', name: 'flink-connector-kafka', version:'0.10.1'
+    compile group: 'com.typesafe.akka', name: 'akka-actor_2.10', version: '2.1.0'
+    compile group: 'com.typesafe.akka', name: 'akka-camel_2.10', version: '2.3.9'
 }
 task fatJar(type: Jar) {
 	manifest {
